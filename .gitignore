@@ -9,3 +9,4 @@ public/system/redactor_assets/*
 .cap_tasks~
 .DS_Store
 .keep
+public/system/*

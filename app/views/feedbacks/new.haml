@@ -1,0 +1,13 @@
+= simple_form_for @feedback, html: { class: "form-vertical" } do |f|
+  .row
+    .span6
+
+      = f.input :name, input_html: { class: "span6" }
+      = f.input :email, input_html: { class: "span6" }
+      = f.input :is_success, as: :radio_buttons, item_wrapper_class: "inline"
+      = f.input :restored_at, input_html: { class: "span3" }
+      = f.input :feedback, input_html: { rows: 8, class: "span6" }
+
+      .form-group
+        .form-actions
+          = f.submit class: "btn btn-default btn-primary"

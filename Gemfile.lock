@@ -35,7 +35,7 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.3.1.0)
+    bootstrap-sass (2.3.2.2)
       sass (~> 3.2)
     bootstrap_flash_messages (1.0.0)
     builder (3.2.2)
@@ -64,6 +64,8 @@ GEM
       railties (>= 3.0.0)
     faker (1.4.3)
       i18n (~> 0.5)
+    font-awesome-rails (4.2.0.0)
+      railties (>= 3.2, < 5.0)
     haml (4.1.0.beta.1)
       tilt
     haml-rails (0.6.0)
@@ -107,6 +109,8 @@ GEM
       slop (~> 3.4)
     pry-rails (0.3.2)
       pry (>= 0.9.10)
+    quiet_assets (1.0.3)
+      railties (>= 3.1, < 5.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -191,17 +195,19 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
-  bootstrap-sass
+  bootstrap-sass (< 3.0)
   bootstrap_flash_messages
   coffee-rails (~> 4.0.0)
   dragonfly (~> 1.0.7)
   factory_girl_rails
   faker
+  font-awesome-rails
   haml-rails
   inherited_resources
   jbuilder (~> 2.0)
   jquery-rails
   pry-rails
+  quiet_assets
   rails (~> 4.1)
   rspec-rails
   sass-rails (~> 4.0.3)

@@ -6,8 +6,10 @@ gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.3'
 gem 'haml-rails'
 gem 'dragonfly', '~> 1.0.7'
-gem 'bootstrap-sass'
+
+gem 'bootstrap-sass', '< 3.0'
 gem 'bootstrap_flash_messages'
+gem 'font-awesome-rails'
 gem 'simple_form'
 
 gem 'inherited_resources'
@@ -22,6 +24,7 @@ gem 'jbuilder', '~> 2.0'
 group :development, :test do
   gem 'spring'
   gem 'thin'
+  gem 'quiet_assets'
 
   gem 'better_errors'
   gem 'binding_of_caller'
