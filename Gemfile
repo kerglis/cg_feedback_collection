@@ -15,6 +15,14 @@ gem 'jbuilder', '~> 2.0'
 group :development do
   gem 'spring'
   gem 'thin'
-  gem 'rspec-rails'
+
+  gem 'better_errors'
+  gem 'binding_of_caller'
+
   gem 'pry-rails'
+  gem 'rspec-rails'
+
+  gem 'factory_girl_rails'
+  gem 'faker'
+
 end
