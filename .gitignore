@@ -1,0 +1,11 @@
+/.bundle
+/db/*.sqlite3
+/log/*.log
+/tmp
+/public/uploads/*
+public/system/redactor_assets/*
+.ruby-gemset
+.ruby-version
+.cap_tasks~
+.DS_Store
+.keep
