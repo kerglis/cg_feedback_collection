@@ -1,0 +1,8 @@
+%tr[feedback]
+  %td= feedback.name
+  %td= feedback.email
+  %td= feedback.is_success
+  %td= feedback.restored_at
+  %td
+    - if feedback.image_stored?
+      = link_to image_tag(feedback.image.thumb("50x50#").url), feedback.image.url, rel: "prettyPhoto"

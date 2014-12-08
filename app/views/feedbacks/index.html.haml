@@ -1,0 +1,10 @@
+%table.table.table-striped.table-condensed
+  %thead
+    %th= t(".name")
+    %th= t(".email")
+    %th= t(".is_success")
+    %th= t(".restored_at")
+    %th= t(".image")
+
+  %tbody
+    = render @feedbacks

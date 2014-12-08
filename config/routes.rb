@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :feedbacks, except: [ :index, :destroy ]
+  resources :feedbacks
 
   root to: 'feedbacks#new'
 

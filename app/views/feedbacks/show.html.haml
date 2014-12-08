@@ -1,0 +1,16 @@
+- fields = [ :name, :email, :is_success_str, :restored_at, :website_url, :feedback, :url ]
+
+%table.table.table-striped.table-condensed
+  %tbody
+    - fields.each do |ff|
+      - val = @feedback.try(ff)
+      - if val.present?
+        %tr
+          %th= t(".#{ff}")
+          %td= val
+
+    - if @feedback.image_stored?
+      %tr
+        %th= t(".image")
+        %td
+          = link_to image_tag(@feedback.image.thumb("200x200#").url), @feedback.image.url, rel: "prettyPhoto"

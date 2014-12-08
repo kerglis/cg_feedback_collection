@@ -103,6 +103,11 @@ GEM
     mime-types (2.4.3)
     minitest (5.4.3)
     multi_json (1.10.1)
+    prettyphoto-rails (0.2.1)
+      jquery-rails
+      rails (>= 3.1)
+      sass-rails
+      uglifier
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -206,6 +211,7 @@ DEPENDENCIES
   inherited_resources
   jbuilder (~> 2.0)
   jquery-rails
+  prettyphoto-rails
   pry-rails
   quiet_assets
   rails (~> 4.1)

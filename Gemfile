@@ -11,6 +11,7 @@ gem 'bootstrap-sass', '< 3.0'
 gem 'bootstrap_flash_messages'
 gem 'font-awesome-rails'
 gem 'simple_form'
+gem 'prettyphoto-rails'
 
 gem 'inherited_resources'
 

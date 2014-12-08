@@ -15,11 +15,12 @@ class Feedback < ActiveRecord::Base
     is_success? ? "yes" : "no"
   end
 
-  def image_str(size = nil)
-    if image_stored?
-      size  ? image_tag(image.thumb(size).path)
-            : image_tag(image.path)
-    end
+  def to_json(options = nil)
+    super(only: [ :name, :email, :restored_at, :website_url, :feedback, :url ], methods: [:image_url])
+  end
+
+  def image_url
+    image.url if image_stored?
   end
 
 end

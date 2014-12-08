@@ -12,6 +12,7 @@
  *
  *= require bootstrap
  *= require bootstrap-datepicker
+ *= require prettyphoto-rails
  *= require font-awesome
  *= require_tree .
  *= require_self

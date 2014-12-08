@@ -2,9 +2,7 @@ class FeedbacksController < ApplicationController
 
   inherit_resources
 
-  def index
-    render :new
-  end
+  respond_to :html, :json
 
   def create
     create! do |success, failure |
