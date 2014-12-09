@@ -1,16 +1,21 @@
 - fields = [ :name, :email, :is_success_str, :restored_at, :website_url, :feedback, :url ]
 
+.alert.alert-success
+  %b= t("feedback.thank_you")
+
+%h4= t("feedback.your_submitted_data")
+
 %table.table.table-striped.table-condensed
   %tbody
     - fields.each do |ff|
       - val = @feedback.try(ff)
       - if val.present?
         %tr
-          %th= t(".#{ff}")
+          %th= t("feedback.#{ff}")
           %td= val
 
     - if @feedback.image_stored?
       %tr
-        %th= t(".image")
+        %th= t("feedback.image")
         %td
-          = link_to image_tag(@feedback.image.thumb("200x200#").url), @feedback.image.url, rel: "prettyPhoto"
+          = link_to image_tag(@feedback.image.thumb("100x100#").url), @feedback.image.url, rel: "prettyPhoto"

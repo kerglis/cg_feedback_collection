@@ -2,10 +2,10 @@
   .row
     .span6
       .alert.alert-info
-        Please add more info
+        = t("feedback.additional_info")
 
-      = f.input :image, as: :file
-      = f.input :website_url, input_html: { class: "span6" }
+      = f.input :image, as: :file, label: t("feedback.image")
+      = f.input :website_url, input_html: { class: "span6" }, label: t("feedback.website_url")
 
       .form-group
         .form-actions

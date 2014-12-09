@@ -7,7 +7,6 @@
     %title CodeGuard Feedback
 
     = stylesheet_link_tag "application"
-    = javascript_include_tag "application"
 
     = yield :head
     = csrf_meta_tag
@@ -18,3 +17,5 @@
       = render "header"
 
       = yield
+
+      = javascript_include_tag "application"

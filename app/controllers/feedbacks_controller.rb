@@ -2,11 +2,13 @@ class FeedbacksController < ApplicationController
 
   inherit_resources
 
-  respond_to :html, :json
+  respond_to :html
 
   def create
     create! do |success, failure |
-      success.html { redirect_to edit_resource_url }
+      success.html do
+        redirect_to resource.is_success? ? edit_resource_url : resource_url
+      end
     end
   end
 
