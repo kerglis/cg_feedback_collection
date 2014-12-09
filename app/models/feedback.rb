@@ -6,7 +6,7 @@ class Feedback < ActiveRecord::Base
   dragonfly_accessor :image
 
   validates_presence_of  :feedback
-  validates_inclusion_of :is_success, in: [true, false]
+  validates_inclusion_of :is_success, in: [true, false], message: "Please choose one"
 
   def self.permitted_params
     [ :name, :email, :is_success, :restored_at, :website_url, :feedback, :url, :image ]
