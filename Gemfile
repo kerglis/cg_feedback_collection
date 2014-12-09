@@ -30,7 +30,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
 
-  gem 'pry-rails'
+  gem 'pry'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
