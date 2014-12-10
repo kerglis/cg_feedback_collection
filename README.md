@@ -18,5 +18,7 @@
 
     GET /api/v1/feedback/list
 
-    `limit` (Integer) - to change default limit of 20
-    `filter` (String) - `successful` or `unsuccessful` to filter out respective feedbacks
+**Options**
+
+* `limit` -- change the default limit `GET /api/v1/feedback/list?limit=10`
+* `filter` --  filter out respective feedbacks `successful` | `unsuccessful` -- `GET /api/v1/feedback/list?filter=unsuccessful&limit=100`
