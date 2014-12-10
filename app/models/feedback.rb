@@ -8,6 +8,9 @@ class Feedback < ActiveRecord::Base
   validates_presence_of  :feedback
   validates_inclusion_of :is_success, in: [true, false], message: "Please choose one"
 
+  scope :successful, -> { where(is_success: true) }
+  scope :unsuccessful, -> { where(is_success: false) }
+
   def self.permitted_params
     [ :name, :email, :is_success, :restored_at, :website_url, :feedback, :url, :image ]
   end
