@@ -32,6 +32,9 @@ group :development, :test do
 
   gem 'pry'
   gem 'rspec-rails'
+  gem 'capybara-webkit'
+  gem 'launchy'
+
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
   gem 'faker'
