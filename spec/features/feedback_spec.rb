@@ -12,7 +12,7 @@ feature "Feedback", type: :feature do
     fill_in "feedback_feedback", with: "Some feedback text"
     click_on "Create Feedback"
 
-    # @feedback = Feedback.last
+    @feedback = Feedback.last
 
     expect(@feedback).to_not be_is_success
     expect(@feedback.feedback).to eq "Some feedback text"
