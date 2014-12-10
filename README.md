@@ -20,8 +20,12 @@
 
 **Options**
 
-* `limit` -- change the default limit `GET /api/v1/feedback/list?limit=10`
-* `filter` --  filter out respective feedbacks `successful` | `unsuccessful` -- `GET /api/v1/feedback/list?filter=unsuccessful&limit=100`
+* `limit` -- change the default limit (20)
+
+  `GET /api/v1/feedback/list?limit=10`
+* `filter` --  filter out respective feedbacks `successful` or `unsuccessful`
+
+  `GET /api/v1/feedback/list?filter=unsuccessful&limit=100`
 
 ### Post feedback
 
