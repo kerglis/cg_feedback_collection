@@ -11,6 +11,8 @@ class Feedback < ActiveRecord::Base
   scope :successful, -> { where(is_success: true) }
   scope :unsuccessful, -> { where(is_success: false) }
 
+  default_scope { order(id: :desc) }
+
   def self.permitted_params
     [ :name, :email, :is_success, :restored_at, :website_url, :feedback, :url, :image ]
   end

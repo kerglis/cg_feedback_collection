@@ -7,3 +7,18 @@
   $ bundle install
   $ rake db:setup
   $ rails s
+
+== RSpec tests
+
+  $ rspec spec
+
+== API
+
+=== List feedbacks
+
+  GET /api/v1/feedback/list
+
+==== GET params
+
+  limit (Integer) - to change default limit of 20
+  filter (String) - `successful` or `unsuccessful` to filter out respective feedbacks
