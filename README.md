@@ -22,3 +22,19 @@
 
 * `limit` -- change the default limit `GET /api/v1/feedback/list?limit=10`
 * `filter` --  filter out respective feedbacks `successful` | `unsuccessful` -- `GET /api/v1/feedback/list?filter=unsuccessful&limit=100`
+
+### Post feedback
+
+    POST /api/v1/feedback
+
+**Parameters**
+
+    params do
+      requires :is_success,         type: Boolean
+      requires :feedback,           type: String
+      optional :name,               type: String
+      optional :email,              type: String
+      optional :restored_at,        type: Date
+      optional :image,              type: String
+      optional :website_url,        type: String
+    end
