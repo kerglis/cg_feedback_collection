@@ -20,7 +20,7 @@
 
 **Options**
 
-* `limit` -- change the default limit (20)
+* `limit` -- change the limit (default = 20)
 
   `GET /api/v1/feedback/list?limit=10`
 * `filter` --  filter out respective feedbacks `successful` or `unsuccessful`
