@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141208174434) do
+ActiveRecord::Schema.define(version: 20150108190038) do
 
   create_table "feedbacks", force: true do |t|
     t.string   "name"
@@ -25,6 +25,10 @@ ActiveRecord::Schema.define(version: 20141208174434) do
     t.string   "image_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "state",         limit: 20
+    t.string   "feedback_type"
   end
+
+  add_index "feedbacks", ["state"], name: "index_feedbacks_on_state"
 
 end
