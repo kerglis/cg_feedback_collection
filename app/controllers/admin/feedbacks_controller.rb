@@ -8,6 +8,14 @@ class Admin::FeedbacksController < Admin::BaseController
     update! { collection_url }
   end
 
+  def swap
+    resource.swap
+    respond_to do |format|
+      format.html{ redirect_to collection_url }
+      format.js
+    end
+  end
+
 private
 
   def collection

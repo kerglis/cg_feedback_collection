@@ -11,11 +11,19 @@ describe Feedback, type: :model do
   specify { expect(feedback_no.is_success_str).to eq "no" }
 
   context "states" do
-    specify { expect(feedback_yes).to be_unapproved }
 
-    context "approve" do
-      before { feedback_yes.approve }
-      specify { expect(feedback_yes).to be_approved }
+    it { expect(feedback_yes).to be_unapproved }
+
+    it "approve" do
+      feedback_yes.approve
+      expect(feedback_yes).to be_approved
+    end
+
+    it "swap" do
+      feedback_yes.swap
+      expect(feedback_yes).to be_approved
+      feedback_yes.swap
+      expect(feedback_yes).to be_unapproved
     end
 
   end
@@ -24,7 +32,6 @@ describe Feedback, type: :model do
     it "feedback_type" do
       expect(feedback_yes.feedback_type).to eq(Feedback.feedback_types.first)
     end
-
   end
 
 end

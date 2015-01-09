@@ -17,17 +17,23 @@ class Feedback < ActiveRecord::Base
   default_scope { order(id: :desc) }
 
   state_machine :state, initial: :unapproved do
+
     event :approve do
-      transition :unapproved => :approved
+      transition unapproved: :approved
     end
 
     event :unapprove do
-      transition :approved => :unapproved
+      transition approved: :unapproved
     end
+
+    event :swap do
+      transition unapproved: :approved, approved: :unapproved
+    end
+
   end
 
   def self.permitted_params
-    [ :name, :email, :is_success, :restored_at, :website_url, :feedback, :url, :image ]
+    [ :name, :email, :is_success, :restored_at, :website_url, :feedback, :url, :image, :state ]
   end
 
   def self.feedback_types

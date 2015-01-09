@@ -13,6 +13,7 @@
     .span6
       = f.input :feedback, input_html: { rows: 8, class: "span6" }, label: t("feedback.feedback")
     .span6
+      = f.input :state, as: :radio_buttons, collection: Feedback.state_machine.states.map(&:name), item_wrapper_class: "inline"
       = f.input :website_url, input_html: { class: "span6" }, label: t("feedback.website_url")
       - if @feedback.image_stored?
         %label Image

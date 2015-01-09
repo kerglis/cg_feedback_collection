@@ -1,7 +1,7 @@
 module ApplicationHelper
 
-  def state_switch(feedback)
-    if feedback.approved?
+  def state_switch(obj)
+    if obj.approved?
       action = :unapprove
       cl = "green"
     else
@@ -9,7 +9,7 @@ module ApplicationHelper
       cl = "gray"
     end
 
-    link_to fa_icon("check-circle #{cl}"), "#", class: "btn btn-mini", title: feedback.state
+    link_to fa_icon("check-circle #{cl}"), url_for([:swap, :admin, obj]), title: obj.state, remote: true
   end
 
 end
