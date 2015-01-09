@@ -23,8 +23,9 @@ describe "FeedbackAPI", type: :request do
   describe "GET to /api/v1/feedback/list" do
     before do
       Feedback.destroy_all
-      5.times { FactoryGirl.create(:feedback, is_success: true) }
-      3.times { FactoryGirl.create(:feedback, is_success: false) }
+      5.times { create(:feedback, is_success: true, state: "approved") }
+      3.times { create(:feedback, is_success: false, state: "approved") }
+      2.times { create(:feedback, is_success: true, state: "unapproved") }
     end
 
     it 'all feedbacks' do
