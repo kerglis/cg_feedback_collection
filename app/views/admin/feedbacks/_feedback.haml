@@ -8,6 +8,8 @@
   %td
     = feedback.is_success
   %td
+    = feedback.feedback_type
+  %td
     = feedback.restored_at
   %td
     - if feedback.image_stored?

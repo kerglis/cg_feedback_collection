@@ -10,6 +10,7 @@ en:
     restored_at: Time of restore
     website_url: Website url
     feedback: Additional feedback
+    feedback_type: Feedback type
     url: URL
     image: Image
     additional_info: Please add more info

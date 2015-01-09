@@ -4,18 +4,18 @@
   %thead
     = search_form_for [ :admin, @q ] do |f|
       %tr
-        %th
-          = f.text_field :name_start, placeholder: t("feedback.name"), class: "small", data: { auto_submit: true }
-        %th
-          = f.text_field :email_start, placeholder: t("feedback.email"), class: "small", data: { auto_submit: true }
-        %th
-          = f.select :state_eq, Feedback.state_machine.states.map(&:name), { include_blank: "-- #{t("feedback.state")} --"}, class: "small", data: { auto_submit: true }
-        %th
-          = f.select :is_success_eq, [ true, false ], { include_blank: "-- #{t("feedback.is_success")} --"}, class: "small", data: { auto_submit: true }
-        %th
-          = t("feedback.restored_at")
-        %th
-          = t("feedback.image")
+        %th.nw
+          = f.text_field :name_start, placeholder: "Name", class: "small", data: { auto_submit: true }
+        %th.nw
+          = f.text_field :email_start, placeholder: "Email", class: "small", data: { auto_submit: true }
+        %th.nw
+          = f.select :state_eq, Feedback.state_machine.states.map(&:name), { include_blank: "-- State --"}, class: "small", data: { auto_submit: true }
+        %th.nw
+          = f.select :is_success_eq, [ true, false ], { include_blank: "-- Successful ? --"}, class: "small", data: { auto_submit: true }
+        %th.nw
+          = f.select :feedback_type_eq, Feedback.feedback_types, { include_blank: "-- Type --"}, class: "small", data: { auto_submit: true }
+        %th.nw Restored at
+        %th.nw Image
         %th.nw.pr_1
 
   %tbody

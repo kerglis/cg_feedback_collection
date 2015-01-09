@@ -33,7 +33,7 @@ class Feedback < ActiveRecord::Base
   end
 
   def self.permitted_params
-    [ :name, :email, :is_success, :restored_at, :website_url, :feedback, :url, :image, :state ]
+    [ :name, :email, :is_success, :restored_at, :website_url, :feedback, :url, :image, :state, :feedback_type ]
   end
 
   def self.feedback_types
