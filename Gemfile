@@ -25,6 +25,12 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
 group :development, :test do
+
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'capistrano-passenger'
+
   gem 'spring'
   gem 'thin'
   gem 'quiet_assets'
