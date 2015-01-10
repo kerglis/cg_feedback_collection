@@ -15,7 +15,7 @@ class FeedbackAPI < Grape::API
     get :list do
       limit = params[:limit] || 20
 
-      scope = Feedback
+      scope = Feedback.approved
 
       if params[:filter] and [:successful, :unsuccessful].include?(params[:filter].to_sym)
         scope = scope.send(params[:filter])

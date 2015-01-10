@@ -4,6 +4,11 @@ class FeedbacksController < ApplicationController
 
   respond_to :html
 
+  def index
+    @feedback = Feedback.new
+    render :new
+  end
+
   def create
     create! do |success, failure |
       success.html do

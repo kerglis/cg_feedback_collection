@@ -2,11 +2,17 @@ require 'rails_helper'
 
 feature "Feedback", type: :feature do
 
-  scenario "complete form with :is_success false" do
+  scenario "bad link" do
     visit "/"
 
-    expect(page).to have_field("feedback_name")
-    expect(page).to have_field("feedback_email")
+    expect(page).to have_content "Please use link sent from CodeGuard"
+    expect(page).to_not have_field("feedback")
+  end
+
+  scenario "complete form with :is_success false" do
+    visit prepared_feedback_link
+
+    expect(page).to have_field("feedback")
 
     choose "feedback_is_success_false"
     fill_in "feedback_feedback", with: "Some feedback text"
@@ -21,7 +27,7 @@ feature "Feedback", type: :feature do
   end
 
   scenario "complete form with :is_success true" do
-    visit "/"
+    visit prepared_feedback_link
 
     choose "feedback_is_success_true"
     fill_in "feedback_feedback", with: "Some other feedback text"
@@ -49,7 +55,7 @@ feature "Feedback", type: :feature do
   end
 
   scenario "form with out required fields" do
-    visit "/"
+    visit prepared_feedback_link
 
     choose "feedback_is_success_true"
     click_on "Create Feedback"

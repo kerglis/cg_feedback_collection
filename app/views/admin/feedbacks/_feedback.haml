@@ -1,0 +1,18 @@
+%tr[feedback]{ class: feedback.row_class }
+  %td
+    = feedback.name
+  %td
+    = feedback.email
+  %td.c
+    = state_switch(feedback)
+  %td
+    = feedback.is_success
+  %td
+    = feedback.feedback_type
+  %td
+    = feedback.restored_at
+  %td
+    - if feedback.image_stored?
+      = link_to image_tag(feedback.image.thumb("50x50#").url, class: "img-rounded"), feedback.image.url, rel: "prettyPhoto"
+  %td.nw
+    = link_to fa_icon("pencil"), edit_resource_path(feedback), class: "btn btn-mini"

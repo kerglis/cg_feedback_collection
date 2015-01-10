@@ -1,0 +1,24 @@
+%h2 Feedback administration
+
+%table.table.table-striped.table-condensed
+  %thead
+    = search_form_for [ :admin, @q ] do |f|
+      %tr
+        %th.nw
+          = f.text_field :name_start, placeholder: "Name", class: "small", data: { auto_submit: true }
+        %th.nw
+          = f.text_field :email_start, placeholder: "Email", class: "small", data: { auto_submit: true }
+        %th.nw
+          = f.select :state_eq, Feedback.state_machine.states.map(&:name), { include_blank: "-- State --"}, class: "small", data: { auto_submit: true }
+        %th.nw
+          = f.select :is_success_eq, [ true, false ], { include_blank: "-- Successful ? --"}, class: "small", data: { auto_submit: true }
+        %th.nw
+          = f.select :feedback_type_eq, Feedback.feedback_types, { include_blank: "-- Type --"}, class: "small", data: { auto_submit: true }
+        %th.nw Restored at
+        %th.nw Image
+        %th.nw.pr_1
+
+  %tbody
+    = render @feedbacks
+
+= will_paginate(@feedbacks)
