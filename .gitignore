@@ -8,3 +8,4 @@ public/system/redactor_assets/*
 .DS_Store
 .keep
 public/system/*
+config/database.yml
