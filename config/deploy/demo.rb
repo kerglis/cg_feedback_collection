@@ -6,6 +6,4 @@ server '54.174.166.127', user: 'ubuntu', roles: %w{web app}
 
 set :branch, :master
 set :deploy_to, '/home/ubuntu/demo/cg_feedback_collection'
-set :rails_env, "demo"
-
-set :linked_files, %w{ tmp/restart.txt db/demo.sqlite3 }
+set :rails_env, 'demo'
