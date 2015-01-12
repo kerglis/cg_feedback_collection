@@ -155,6 +155,7 @@ GEM
     minitest (5.4.3)
     multi_json (1.10.1)
     multi_xml (0.5.5)
+    mysql2 (0.3.17)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
@@ -245,7 +246,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
-    sqlite3 (1.3.10)
     sshkit (1.6.1)
       colorize (>= 0.7.0)
       net-scp (>= 1.1.2)
@@ -298,6 +298,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   launchy
+  mysql2
   prettyphoto-rails
   pry
   quiet_assets
@@ -308,7 +309,6 @@ DEPENDENCIES
   shoulda-matchers
   simple_form
   spring
-  sqlite3
   state_machine
   thin
   turbolinks

@@ -9,3 +9,4 @@ public/system/redactor_assets/*
 .keep
 public/system/*
 config/database.yml
+.capistrano/metrics
