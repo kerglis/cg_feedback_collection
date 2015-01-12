@@ -2,8 +2,10 @@
   .alert.alert-danger
     Please use link sent from CodeGuard - like:
     %br
-    %a{ href: "http://localhost:3000/?feedback[email]=email&feedback[restored_at]=01/01/2015%2010:10&feedback[url]=www.url.com" }
-      http://localhost:3000/?feedback[email]=email&feedback[restored_at]=01/01/2015%2010:10&feedback[url]=www.url.com
+
+    - url = "#{Rails.configuration.dragonfly_host}/?feedback[email]=email&feedback[restored_at]=01/01/2015%2010:10&feedback[url]=www.url.com"
+    %a{ href: url }
+      = url
 
 - else
   = simple_form_for @feedback, html: { class: "form-vertical" } do |f|
