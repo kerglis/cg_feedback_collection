@@ -29,6 +29,6 @@ ActiveRecord::Schema.define(version: 20150108190038) do
     t.string   "feedback_type"
   end
 
-  add_index "feedbacks", ["state"], name: "index_feedbacks_on_state"
+  add_index "feedbacks", ["state"], name: "index_feedbacks_on_state", using: :btree
 
 end

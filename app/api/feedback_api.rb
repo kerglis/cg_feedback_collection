@@ -1,5 +1,16 @@
-class FeedbackAPI < Grape::API
+class FeedbackEntity < Grape::Entity
+  expose :name
+  expose :email
+  expose :restored_at
+  expose :website_url
+  expose :feedback
+  expose :url
+  expose :state
+  expose :image_url
+  expose :image_name
+end
 
+class FeedbackAPI < Grape::API
   helpers do
     def clean_params
       ActionController::Parameters.new(params).permit(Feedback.permitted_params)
@@ -21,7 +32,9 @@ class FeedbackAPI < Grape::API
         scope = scope.send(params[:filter])
       end
 
-      scope.limit(limit)
+      feedbacks = scope.limit(limit)
+
+      present feedbacks, with: FeedbackEntity
     end
 
     desc "Create a feedback"

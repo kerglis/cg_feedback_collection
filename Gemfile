@@ -7,6 +7,7 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'haml-rails'
 gem 'dragonfly', '~> 1.0.7'
 gem 'grape'
+gem 'grape-entity'
 
 gem 'bootstrap-sass', '< 3.0'
 gem 'bootstrap_flash_messages'
