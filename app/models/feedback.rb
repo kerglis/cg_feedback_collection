@@ -56,6 +56,10 @@ class Feedback < ActiveRecord::Base
     image.url if image_stored?
   end
 
+  def image_thumbnail_url
+    image.thumb("150x150#").url if image_stored?
+  end
+
 private
 
   def set_defaults

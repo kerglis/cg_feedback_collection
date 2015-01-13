@@ -7,6 +7,7 @@ class FeedbackEntity < Grape::Entity
   expose :url
   expose :state
   expose :image_url
+  expose :image_thumbnail_url
   expose :image_name
 end
 
