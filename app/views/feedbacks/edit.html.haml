@@ -1,15 +1,10 @@
 = simple_form_for @feedback, html: { class: "form-vertical" } do |f|
   .row
-    .span6
-      .alert.alert-info
-        = t("feedback.additional_info")
+    %p Thank you for the feedback! We sincerely appreciate it. If you would like your quote to be promoted on the CodeGuard website, along with your comopany logo and website URL, feel free to leave additional information below.
 
-      = f.input :image, as: :file, label: t("feedback.image")
-      = f.input :website_url, input_html: { class: "span6" }, label: t("feedback.website_url")
+    = f.input :image, as: :file, label: t("feedback.image")
+    = f.input :website_url, input_html: { class: "span6" }, label: t("feedback.website_url")
 
-      .form-group
-        .form-actions
-          = f.submit class: "btn btn-default btn-primary"
-
-    .span6
-      = render "extra_info"
+    .form-group
+      .form-actions
+        = f.submit class: "btn btn-default btn-primary"

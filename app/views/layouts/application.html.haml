@@ -4,7 +4,7 @@
     %meta{'http-equiv' => 'Content-Type', content: 'text/html;charset=UTF-8'}/
     %meta{name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1" }
 
-    %title CodeGuard Feedback
+    %title CodeGuard Restore Feedback
 
     = stylesheet_link_tag "application"
 
@@ -15,9 +15,6 @@
   %body
     .container
       = render "header"
-
-      #flash_messages
-        = flash_messages(:close, :fade)
 
       = yield
 

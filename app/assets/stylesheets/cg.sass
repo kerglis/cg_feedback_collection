@@ -3,15 +3,44 @@ $fa_green: #81b822
 $fa_red: #e5172c
 $fa_gray: #dddddd
 
+html, body
+  margin: 0px
+  padding: 0px
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif
+  background: #f1f1f1
+
+.container
+  max-width: 60%
+  padding: 0px 0px 0px 0px
+  margin-top: 50px
+  background: #fff
+
+p
+  font-size: 15px
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif
+
+.row
+  background: #fff
+  margin-left: 0px
+  padding: 30px 50px 40px 50px
+
+h1
+  font-size: 35px
+
 header
-  margin: 10px 0
+  background: #323232
+  a
+    display: block
+    text-align: center
+    img
+      margin: 0 auto
 
   h2
     color: #ebebeb
 
   .logo
-    margin: 10px 20px 0 10px
     height: 40px
+    margin: 20px 0px
 
 
 select, input
@@ -58,3 +87,83 @@ td.c, th.c, .c
 
 td.r, th.r, .r
   text-align: right
+
+input[type=submit]
+  background: #7dbd16
+  color: white
+  padding: 15px 35px
+  border-radius: 4px
+  -webkit-border-radius: 4px
+  -moz-border-radius: 4px
+  text-decoration: none
+  font-weight: 600
+  font-size: 15px
+  transition: .45s
+  text-shadow: none
+  cursor: pointer
+  border: none
+  font-smoothing: antialiased
+  -webkit-font-smoothing: antialiased
+  &:visited, &:focus, &:clicked
+    background: #7dbd16
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.17)
+    color: white
+    padding: 13px 27px 13px 27px
+    border-radius: 4px
+    -webkit-border-radius: 4px
+    -moz-border-radius: 4px
+    text-decoration: none
+    font-weight: 600
+    font-size: 14px
+    transition: .45s
+    cursor: pointer
+    border: none
+    font-smoothing: antialiased
+    text-shadow: none
+    -webkit-font-smoothing: antialiased
+  &:hover
+    transition: .45s
+    background: #64a000
+
+.form-actions
+  background: none
+  border: none
+  padding: 0px
+  margin-bottom: 10px
+  margin-top: 25px
+
+.controls
+  input, textarea
+    background: #fff
+    border: 1px solid #D1D1D1
+    padding: 14px 12px
+    border-radius: 3px
+    font-size: 14px
+
+input.span6, textarea.span6, .uneditable-input.span6
+  width: 100%
+  height: auto
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+.control-group
+  margin: 27px 0px
+  .controls
+    span
+      margin-right: 15px
+
+.control-group.error .control-label, .control-group.error .help-block, .control-group.error .help-inline
+  color: #f75c1f
+
+.control-group.error .checkbox, .control-group.error .radio, .control-group.error input, .control-group.error select, .control-group.error textarea
+  color: #f75c1f
+
+.control-group.error input, .control-group.error select, .control-group.error textarea
+  border-color: #f75c1f
+
+#feedback_name
+  width: 60%
+
+abbr
+  display: none
