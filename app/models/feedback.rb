@@ -19,7 +19,7 @@ class Feedback < ActiveRecord::Base
   state_machine :state, initial: :unapproved do
 
     event :approve do
-      transition unapproved: :approved
+      transition unapproved: :approved, if: :approvable?
     end
 
     event :unapprove do
@@ -27,7 +27,8 @@ class Feedback < ActiveRecord::Base
     end
 
     event :swap do
-      transition unapproved: :approved, approved: :unapproved
+      transition unapproved: :approved, if: :approvable?
+      transition approved: :unapproved
     end
 
   end
@@ -46,6 +47,10 @@ class Feedback < ActiveRecord::Base
 
   def to_json(options = nil)
     super(only: [ :name, :email, :restored_at, :website_url, :feedback, :url, :state ], methods: [:image_url])
+  end
+
+  def approvable?
+    name.present?
   end
 
   def row_class

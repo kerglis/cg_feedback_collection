@@ -6,12 +6,12 @@
       = f.input :name, input_html: { class: "span6" }, label: t("feedback.name")
       = f.input :email, input_html: { class: "span6" }, label: t("feedback.email")
       = f.input :url, input_html: { class: "span6" }, label: t("feedback.url")
-      = f.input :restored_at, as: :string, input_html: { class: "span3" }, label: t("feedback.restored_at")
 
     .span6
       = f.input :is_success, as: :radio_buttons, item_wrapper_class: "inline", label: t("feedback.is_success")
       = f.input :feedback_type, as: :radio_buttons, collection: Feedback.feedback_types, item_wrapper_class: "inline"
-      = f.input :state, as: :radio_buttons, collection: Feedback.state_machine.states.map(&:name), item_wrapper_class: "inline"
+      = f.input :restored_at, as: :string, input_html: { class: "span3" }, label: t("feedback.restored_at")
+      =# f.input :state, as: :radio_buttons, collection: Feedback.state_machine.states.map(&:name), item_wrapper_class: "inline"
 
   .row
     .span6
