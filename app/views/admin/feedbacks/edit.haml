@@ -15,10 +15,9 @@
 
   .row
     .span6
-      = f.input :feedback, input_html: { rows: 8, class: "span6" }, label: t("feedback.feedback"), disabled: true
-    .span6
       = f.input :feedback_editable_copy, input_html: { rows: 8, class: "span6" }, label: t("feedback.editable_copy")
-
+    .span6
+      = f.input :feedback, input_html: { rows: 8, class: "span6" }, label: t("feedback.feedback"), disabled: true
 
   .row
     .span6
