@@ -38,9 +38,11 @@ feature "Feedback", type: :feature do
     expect(@feedback).to be_is_success
     expect(@feedback.feedback).to eq "Some other feedback text"
     expect(page).to_not have_content I18n.t("feedback.thank_you")
+    expect(page).to have_field("feedback_name")
     expect(page).to have_field("feedback_website_url")
     expect(page).to have_field("feedback_image")
 
+    fill_in "feedback_name", with: "Gordon Freeman"
     fill_in "feedback_website_url", with: "http://example.com"
     attach_file 'feedback_image', "spec/fixtures/gordon_freeman.jpg"
 
@@ -50,11 +52,12 @@ feature "Feedback", type: :feature do
 
     @feedback.reload
 
+    expect(@feedback.name).to eq "Gordon Freeman"
     expect(@feedback.website_url).to eq "http://example.com"
     expect(@feedback.image.name).to eq "gordon_freeman.jpg"
   end
 
-  scenario "form with out required fields" do
+  scenario "form without required fields" do
     visit prepared_feedback_link
 
     choose "feedback_is_success_true"

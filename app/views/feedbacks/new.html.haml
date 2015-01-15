@@ -8,21 +8,16 @@
       = url
 
 - else
+  %h2= t("feedback.step_1")
   = simple_form_for @feedback, html: { class: "form-vertical" } do |f|
-    .row
-      .span6
+    = f.input :is_success, as: :radio_buttons, item_wrapper_class: "inline", label: t("feedback.is_success")
+    = f.input :feedback, input_html: { rows: 8, class: "span6" }, label: t("feedback.feedback")
 
-        = f.input :name, input_html: { class: "span6" }, label: t("feedback.name")
-        = f.input :is_success, as: :radio_buttons, item_wrapper_class: "inline", label: t("feedback.is_success")
-        = f.input :feedback, input_html: { rows: 8, class: "span6" }, label: t("feedback.feedback")
+    = f.hidden_field :email
+    = f.hidden_field :restored_at
+    = f.hidden_field :url
 
-        = f.hidden_field :email
-        = f.hidden_field :restored_at
-        = f.hidden_field :url
-
-        .form-group
-          .form-actions
-            = f.submit class: "btn btn-default btn-primary"
-
-      .span6
-        = render "extra_info"
+    .form-group
+      .form-actions
+        = f.submit "Submit feedback", class: "btn btn-default btn-primary"
+        = link_to t("feedback.skip"), "http://codeguard.com", class: "btn"

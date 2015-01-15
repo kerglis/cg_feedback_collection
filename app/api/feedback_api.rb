@@ -3,7 +3,7 @@ class FeedbackEntity < Grape::Entity
   expose :email
   expose :restored_at
   expose :website_url
-  expose :feedback
+  expose :feedback_editable_copy
   expose :url
   expose :state
   expose :image_url
@@ -21,11 +21,11 @@ class FeedbackAPI < Grape::API
   resource :feedback do
     desc "Return a list of feedbacks"
     params do
-      optional :limit,    type: Integer,  desc: "Limit (default = 20)"
+      optional :limit,    type: Integer,  desc: "Limit (default = 10)"
       optional :filter,   type: String,   desc: "successful || unsuccessful"
     end
     get :list do
-      limit = params[:limit] || 20
+      limit = params[:limit] || 10
 
       scope = Feedback.approved
 
@@ -43,6 +43,7 @@ class FeedbackAPI < Grape::API
       requires :is_success,         type: Boolean
       requires :feedback,           type: String
       optional :name,               type: String
+      optional :url,                type: String
       optional :email,              type: String
       optional :restored_at,        type: Date
       optional :image,              type: String

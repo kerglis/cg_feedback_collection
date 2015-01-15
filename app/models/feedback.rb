@@ -64,6 +64,7 @@ private
 
   def set_defaults
     self.feedback_type ||= Feedback.feedback_types.first
+    self.feedback_editable_copy ||= self.feedback
   end
 
 end
