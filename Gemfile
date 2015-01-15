@@ -25,6 +25,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'rack-cache'
+gem 'rack-contrib'
 
 group :development, :test do
 

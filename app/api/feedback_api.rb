@@ -18,6 +18,8 @@ class FeedbackAPI < Grape::API
     end
   end
 
+  use Rack::JSONP
+
   resource :feedback do
     desc "Return a list of feedbacks"
     params do

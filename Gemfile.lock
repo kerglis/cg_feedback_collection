@@ -182,6 +182,8 @@ GEM
       rack (>= 0.4)
     rack-cache (1.2)
       rack (>= 0.4)
+    rack-contrib (1.2.0)
+      rack (>= 0.9.1)
     rack-mount (0.8.3)
       rack (>= 1.0.0)
     rack-test (0.6.2)
@@ -309,6 +311,7 @@ DEPENDENCIES
   pry
   quiet_assets
   rack-cache
+  rack-contrib
   rails (~> 4.1)
   ransack
   rspec-rails
