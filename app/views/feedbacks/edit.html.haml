@@ -1,10 +1,12 @@
-= simple_form_for @feedback, html: { class: "form-vertical" } do |f|
-  .row
-    %p Thank you for the feedback! We sincerely appreciate it. If you would like your quote to be promoted on the CodeGuard website, along with your comopany logo and website URL, feel free to leave additional information below.
+.container
+  .row.rowContainer
+    = simple_form_for @feedback, html: { class: "form-vertical" } do |f|
+      = image_tag "thanks.png", class: "thanks"
+      %p Thank you for the feedback! We sincerely appreciate it. If you would like your company logo and website URL to be promoted on the CodeGuard website along with your quote, feel free to leave additional information below.
 
-    = f.input :image, as: :file, label: t("feedback.image")
-    = f.input :website_url, input_html: { class: "span6" }, label: t("feedback.website_url")
+      = f.input :image, as: :file, label: "Company Logo", placeholder: "Company Logo"
+      = f.input :website_url, input_html: { class: "span6" }, label: t("feedback.website_url"), placeholder: "Website URL"
 
-    .form-group
-      .form-actions
-        = f.submit class: "btn btn-default btn-primary"
+      .form-group
+        .form-actions
+          = f.submit class: "btn btn-default btn-primary"
