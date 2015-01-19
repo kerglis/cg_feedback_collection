@@ -1,7 +1,6 @@
 .containerAdmin
   .row.rowAdmin
 
-<<<<<<< HEAD
     %h2 Feedback editing
 
     = simple_form_for [:admin, @feedback ], html: { class: "form-vertical" } do |f|
@@ -24,36 +23,3 @@
           .form-actions
             = f.submit class: "btn btn-default btn-primary"
             = link_to "&larr; Back to list".html_safe, collection_url, class: "btn"
-=======
-= simple_form_for [:admin, @feedback ], html: { class: "form-vertical" } do |f|
-  .row
-    .span6
-      = f.input :name, input_html: { class: "span6" }, label: t("feedback.name")
-      = f.input :email, input_html: { class: "span6" }, label: t("feedback.email")
-      = f.input :url, input_html: { class: "span6" }, label: t("feedback.url")
-
-    .span6
-      = f.input :is_success, as: :radio_buttons, item_wrapper_class: "inline", label: t("feedback.is_success")
-      = f.input :feedback_type, as: :radio_buttons, collection: Feedback.feedback_types, item_wrapper_class: "inline"
-      = f.input :restored_at, as: :string, input_html: { class: "span3" }, label: t("feedback.restored_at")
-      =# f.input :state, as: :radio_buttons, collection: Feedback.state_machine.states.map(&:name), item_wrapper_class: "inline"
-
-  .row
-    .span6
-      = f.input :feedback_editable_copy, input_html: { rows: 8, class: "span6" }, label: t("feedback.editable_copy")
-    .span6
-      = f.input :feedback, input_html: { rows: 8, class: "span6" }, label: t("feedback.feedback"), disabled: true
-
-  .row
-    .span6
-      = f.input :website_url, input_html: { class: "span6" }, label: t("feedback.website_url")
-    .span6
-      - if @feedback.image_stored?
-        %label Image
-        = link_to image_tag(@feedback.image.thumb("100x100#").url, class: "img-rounded"), @feedback.image.url, rel: "prettyPhoto"
-
-  .form-group
-    .form-actions
-      = f.submit class: "btn btn-default btn-primary"
-      = link_to "&larr; Back to list".html_safe, collection_url, class: "btn"
->>>>>>> master
