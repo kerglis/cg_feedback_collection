@@ -1,23 +1,22 @@
-- unless @feedback.email and @feedback.restored_at and @feedback.url
-  .alert.alert-danger
-    Please use link sent from CodeGuard - like:
-    %br
+.container
+  .row.rowContainer
+    - unless @feedback.email and @feedback.restored_at and @feedback.url
+      Please use link sent from CodeGuard: 
+      %a{ href: "http://localhost:3000/?feedback[email]=email&feedback[restored_at]=01/01/2015%2010:10&feedback[url]=www.url.com" }
+        Send Restore Feedback
 
-    - url = "#{Rails.configuration.dragonfly_host}/?feedback[email]=email&feedback[restored_at]=01/01/2015%2010:10&feedback[url]=www.url.com"
-    %a{ href: url }
-      = url
+    - else
+      = simple_form_for @feedback, html: { class: "form-vertical" } do |f|
+        %h1 Restore Feedback
+        %p If you have a few minutes to spare, we'd love to know how your recent CodeGuard restore experience went.
 
-- else
-  %h2= t("feedback.step_1")
-  = simple_form_for @feedback, html: { class: "form-vertical" } do |f|
-    = f.input :is_success, as: :radio_buttons, item_wrapper_class: "inline", label: t("feedback.is_success")
-    = f.input :feedback, input_html: { rows: 8, class: "span6" }, label: t("feedback.feedback")
+        = f.input :is_success, as: :radio_buttons, item_wrapper_class: "inline", label: t("feedback.is_success")
+        = f.input :feedback, input_html: { rows: 8, class: "span6" }, label: t("feedback.feedback"), placeholder: "Additional Feedback"
 
-    = f.hidden_field :email
-    = f.hidden_field :restored_at
-    = f.hidden_field :url
+        = f.hidden_field :email
+        = f.hidden_field :restored_at
+        = f.hidden_field :url
 
-    .form-group
-      .form-actions
-        = f.submit "Submit feedback", class: "btn btn-default btn-primary"
-        = link_to t("feedback.skip"), "http://codeguard.com", class: "btn"
+        .form-group
+          .form-actions
+            = f.submit class: "btn btn-default btn-primary"

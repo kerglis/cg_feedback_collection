@@ -1,21 +1,4 @@
-- fields = [ :name, :email, :is_success_str, :restored_at, :website_url, :feedback, :url ]
-
-.alert.alert-success
-  %b= t("feedback.thank_you")
-
-%h4= t("feedback.your_submitted_data")
-
-%table.table.table-striped.table-condensed
-  %tbody
-    - fields.each do |ff|
-      - val = @feedback.try(ff)
-      - if val.present?
-        %tr
-          %th= t("feedback.#{ff}")
-          %td= val
-
-    - if @feedback.image_stored?
-      %tr
-        %th= t("feedback.image")
-        %td
-          = link_to image_tag(@feedback.image.thumb("100x100#").url), @feedback.image.url, rel: "prettyPhoto"
+.container
+  .row.rowContainer
+    %h1 Feedback Submitted
+    %p All submissions are carefully reviewed by our team. We look forward to taking your thoughts into consideration as we improve CodeGuard's restore experience.
