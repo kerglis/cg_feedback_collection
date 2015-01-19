@@ -10,7 +10,6 @@
         %h1 Restore Feedback
         %p If you have a few minutes to spare, we'd love to know how your recent CodeGuard restore experience went.
 
-        = f.input :name, input_html: { class: "span6" }, placeholder: t("feedback.name")
         = f.input :is_success, as: :radio_buttons, item_wrapper_class: "inline", label: t("feedback.is_success")
         = f.input :feedback, input_html: { rows: 8, class: "span6" }, label: t("feedback.feedback"), placeholder: "Additional Feedback"
 

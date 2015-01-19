@@ -5,7 +5,7 @@ class Admin::FeedbacksController < Admin::BaseController
   respond_to :html
 
   def update
-    update! { collection_url }
+    update! { edit_resource_url }
   end
 
   def swap

@@ -19,7 +19,7 @@ class Feedback < ActiveRecord::Base
   state_machine :state, initial: :unapproved do
 
     event :approve do
-      transition unapproved: :approved
+      transition unapproved: :approved, if: :approvable?
     end
 
     event :unapprove do
@@ -27,13 +27,14 @@ class Feedback < ActiveRecord::Base
     end
 
     event :swap do
-      transition unapproved: :approved, approved: :unapproved
+      transition unapproved: :approved, if: :approvable?
+      transition approved: :unapproved
     end
 
   end
 
   def self.permitted_params
-    [ :name, :email, :is_success, :restored_at, :website_url, :feedback, :url, :image, :state, :feedback_type ]
+    [ :name, :email, :is_success, :restored_at, :website_url, :feedback, :feedback_editable_copy, :url, :image, :state, :feedback_type ]
   end
 
   def self.feedback_types
@@ -48,6 +49,10 @@ class Feedback < ActiveRecord::Base
     super(only: [ :name, :email, :restored_at, :website_url, :feedback, :url, :state ], methods: [:image_url])
   end
 
+  def approvable?
+    name.present?
+  end
+
   def row_class
     approved? ? "success" : "warning"
   end
@@ -56,10 +61,15 @@ class Feedback < ActiveRecord::Base
     image.url if image_stored?
   end
 
+  def image_thumbnail_url
+    image.thumb("150x150#").url if image_stored?
+  end
+
 private
 
   def set_defaults
     self.feedback_type ||= Feedback.feedback_types.first
+    self.feedback_editable_copy ||= self.feedback
   end
 
 end

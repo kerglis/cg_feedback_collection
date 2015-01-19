@@ -32,6 +32,10 @@ describe Feedback, type: :model do
     it "feedback_type" do
       expect(feedback_yes.feedback_type).to eq(Feedback.feedback_types.first)
     end
+
+    it "feedback_editable_copy" do
+      expect(feedback_yes.reload.feedback_editable_copy).to eq(feedback_yes.feedback)
+    end
   end
 
 end
