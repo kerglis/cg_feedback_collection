@@ -1,12 +1,13 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~> 4.1'
-gem 'sqlite3'
+gem 'mysql2'
 
 gem 'sass-rails', '~> 4.0.3'
 gem 'haml-rails'
 gem 'dragonfly', '~> 1.0.7'
 gem 'grape'
+gem 'grape-entity'
 
 gem 'bootstrap-sass', '< 3.0'
 gem 'bootstrap_flash_messages'
@@ -23,8 +24,16 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'rack-cache'
+gem 'rack-contrib'
 
 group :development, :test do
+
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'capistrano-passenger'
+
   gem 'spring'
   gem 'thin'
   gem 'quiet_assets'

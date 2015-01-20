@@ -1,0 +1,28 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  host: localhost
+
+development: &dev
+  <<: *default
+  database: cg_feedback
+  username: cg_feedback
+  password: Xxn95cVjPnUR5PmH
+
+demo:
+  <<: *default
+  database: cg_feedback_demo
+  username: cg_feedback_demo
+  password: Xxn95cVjPnUR5PmH
+
+test:
+  <<: *default
+  database: cg_feedback_test
+  username: cg_feedback_test
+  password: Xxn95cVjPnUR5PmH
+
+production:
+  <<: *default
+  database: cg_feedback
+  username: cg_feedback
+  password: Xxn95cVjPnUR5PmH
