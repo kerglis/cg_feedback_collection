@@ -42,3 +42,11 @@
       optional :image,              type: String
       optional :website_url,        type: String
     end
+
+### Administration
+  To enter the `/admin` pages you must first authenticate. Set the desired username and password using environment variables.
+
+  ```
+  export cg_feedback_app_admin_user=my_admin_username
+  export cg_feedback_app_admin_password=my_password
+  ```
